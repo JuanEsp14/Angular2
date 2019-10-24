@@ -17,12 +17,14 @@
                 <td>uppercase</td>
                 <td>{{ nombre | uppercase }}</td>
             </tr>
+
             <!--Pone en minúsculas todo los que se le introduzca al pipe-->
             <tr>
                 <td>{{ nombre }}</td>
                 <td>lowercase</td>
                 <td>{{ nombre | lowercase }}</td>
             </tr>
+
             <!--Corta las pocisiones indicadas de lo que se introduzca al pipe-->
             <!--Sirve para los arreglos-->
             <tr>
@@ -35,6 +37,14 @@
                 <td>{{ arreglo }}</td>
                 <td>slice:1:6</td>
                 <td>{{ arreglo | slice:1:6 }}</td>
+            </tr>
+
+            <!--Digital number se le puede indicar los máximos y mínimos de dígitos a mostrar-->
+            <!--Se debe respetar el siguiente formato, en un string, cantidadDeEnteros.minDecimal-maxDecimal-->
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number:'3.0-2'</td>
+                <td>{{ PI | number:'3.0-2' }}</td>
             </tr>
         </tbody>
     </table>
