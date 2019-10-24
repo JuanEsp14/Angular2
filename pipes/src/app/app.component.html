@@ -46,6 +46,14 @@
                 <td>number:'3.0-2'</td>
                 <td>{{ PI | number:'3.0-2' }}</td>
             </tr>
+
+            <!--Decimal percent o porcentaje pasa a porcentaje el valor ingresado-->
+            <!--Se debe respetar el siguiente formato, en un string, cantidadDeEnteros.minDecimal-maxDecimal-->
+            <tr>
+                <td>{{ a }}</td>
+                <td>percent:'2.2-2'</td>
+                <td>{{ a | percent:'2.2-2' }}</td>
+            </tr>
         </tbody>
     </table>
 

@@ -13,4 +13,6 @@ export class AppComponent {
   arreglo:number[] = [1,2,3,4,5,6,7,8,9,0];
 
   PI = Math.PI;
+
+  a:number = 0.234;
 }
