@@ -46,6 +46,12 @@
                 <td>number:'3.0-2'</td>
                 <td>{{ PI | number:'3.0-2' }}</td>
             </tr>
+            <!--Si no sabemos cuantos enteros tiene el número podemos poner solo los decimales-->
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number:'.0-2'</td>
+                <td>{{ PI | number:'.0-2' }}</td>
+            </tr>
 
             <!--Decimal percent o porcentaje pasa a porcentaje el valor ingresado-->
             <!--Se puede indicar el máx y mínimo siguiente formato, en un string, cantidadDeEnteros.minDecimal-maxDecimal-->
