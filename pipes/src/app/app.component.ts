@@ -17,4 +17,14 @@ export class AppComponent {
   a:number = 0.234;
 
   salario:number = 1234.5;
+
+  heroe = {
+    nombre: "Logan",
+    clave: "Wolverine",
+    edad: 500,
+    direccion:{
+      calle: "Primera",
+      numero: "19"
+    }
+  }
 }
