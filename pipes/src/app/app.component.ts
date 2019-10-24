@@ -11,6 +11,8 @@ export class AppComponent {
 
   nombre:string = "Juan Espinoza";
 
+  nombre2:string = "juAn ManuEl espINoza";
+
   arreglo:number[] = [1,2,3,4,5,6,7,8,9,0];
 
   PI = Math.PI;
@@ -32,4 +34,6 @@ export class AppComponent {
   valorDePromesa = new Promise((resolve, reject) =>{
     setTimeout(() => resolve('Llego la data!'), 3500);
   })
+
+  fecha:Date = new Date();
 }

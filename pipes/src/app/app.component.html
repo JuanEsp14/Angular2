@@ -92,6 +92,35 @@
                 <td>async</td>
                 <td>{{ valorDePromesa | async}}</td>
             </tr>
+
+            <!--Al pipe fecha se le puede cambiar el formato, ya existen algunos definidos en Angular-->
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>date</td>
+                <td>{{ fecha | date }}</td>
+            </tr>
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>date:'medium'</td>
+                <td>{{ fecha | date:'medium' }}</td>
+            </tr>
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>date:'MMMM - dd'</td>
+                <td>{{ fecha | date:'MMMM - dd' }}</td>
+            </tr>
+
+            <!--Pipe personalizado-->
+            <tr>
+                <td>{{ nombre2 }}</td>
+                <td>capitalizado</td>
+                <td>{{ nombre2 | capitalizado }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre2 }}</td>
+                <td>capitalizado:false</td>
+                <td>{{ nombre2 | capitalizado:false }}</td>
+            </tr>
         </tbody>
     </table>
 
