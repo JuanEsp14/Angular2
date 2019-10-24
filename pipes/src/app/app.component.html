@@ -48,11 +48,36 @@
             </tr>
 
             <!--Decimal percent o porcentaje pasa a porcentaje el valor ingresado-->
-            <!--Se debe respetar el siguiente formato, en un string, cantidadDeEnteros.minDecimal-maxDecimal-->
+            <!--Se puede indicar el máx y mínimo siguiente formato, en un string, cantidadDeEnteros.minDecimal-maxDecimal-->
             <tr>
                 <td>{{ a }}</td>
                 <td>percent:'2.2-2'</td>
                 <td>{{ a | percent:'2.2-2' }}</td>
+            </tr>
+
+            <!--Currency pipe pasa a formato peso el número ingresado-->
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency</td>
+                <td>{{ salario | currency }}</td>
+            </tr>
+            <!--Se le puede indicar el tipo de moneda depebderá del ISO 4217-->
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency:'EUR'</td>
+                <td>{{ salario | currency:'EUR' }}</td>
+            </tr>
+            <!--Al enviar un false o un true se le indica si quiero que muestre el signo o la palabra que representa a la moneda-->
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency:'EUR':false</td>
+                <td>{{ salario | currency:'EUR':false }}</td>
+            </tr>
+            <!--Se puede indicar el máx y mínimo siguiente formato, en un string, cantidadDeEnteros.minDecimal-maxDecimal-->
+            <tr>
+                <td>{{ salario }}</td>
+                <td>currency:'EUR':false:'4.0-0'</td>
+                <td>{{ salario | currency:'EUR':false:'4.0-0' }}</td>
             </tr>
         </tbody>
     </table>
