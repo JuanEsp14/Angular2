@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { resolve, reject } from 'q';
 
 @Component({
   selector: 'app-root',
@@ -27,4 +28,8 @@ export class AppComponent {
       numero: "19"
     }
   }
+
+  valorDePromesa = new Promise((resolve, reject) =>{
+    setTimeout(() => resolve('Llego la data!'), 3500);
+  })
 }

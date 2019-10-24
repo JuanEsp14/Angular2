@@ -85,6 +85,13 @@
                 <td>currency:'EUR':false:'4.0-0'</td>
                 <td>{{ salario | currency:'EUR':false:'4.0-0' }}</td>
             </tr>
+
+            <!--Se puede indicar el máx y mínimo siguiente formato, en un string, cantidadDeEnteros.minDecimal-maxDecimal-->
+            <tr>
+                <td>{{ valorDePromesa }}</td>
+                <td>async</td>
+                <td>{{ valorDePromesa | async}}</td>
+            </tr>
         </tbody>
     </table>
 
