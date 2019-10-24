@@ -121,8 +121,19 @@
                 <td>capitalizado:false</td>
                 <td>{{ nombre2 | capitalizado:false }}</td>
             </tr>
+
+            <!--Pipe contraseña-->
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>contraseña:{{ activar }}
+                    <br>
+                    <button class="btn btn-outline-primary" type="button" (click)="activar=!activar">Activar/Desactivar</button>
+                </td>
+                <td>{{ nombre | contrasena:activar }}</td>
+            </tr>
         </tbody>
     </table>
+
 
     <h4>Slice</h4>
     <ul>
