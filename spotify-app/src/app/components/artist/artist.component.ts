@@ -36,8 +36,13 @@ export class ArtistComponent {
    getToptracks(id:string){
      this.spotify.getTopTracks(id)
        .subscribe( (topTracks:any) => {
+          console.log(topTracks);
           this.topTracks = topTracks;
        })
+   }
+
+   getDataUri(uri:string){
+     return uri.split(':')[2];
    }
   
 }
