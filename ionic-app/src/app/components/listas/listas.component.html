@@ -1,5 +1,5 @@
 <ion-list color="dark">
-    <ion-item-sliding *ngFor="let pendiente of deseosService.listas">
+    <ion-item-sliding *ngFor="let pendiente of deseosService.listas | filtroCompletado:terminada">
         <ion-item detail color="dark" (click)="editarLista(pendiente)">
             <ion-label>{{pendiente.titulo}}</ion-label>
             <ion-note slot="end" color="tertiary">{{pendiente.items.length}} items</ion-note>
