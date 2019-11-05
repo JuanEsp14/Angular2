@@ -1,3 +1,6 @@
-<p>
-  listas works!
-</p>
+<ion-list color="dark">
+    <ion-item *ngFor="let pendiente of deseosService.listas" detail color="dark" (click)="editarLista(pendiente)">
+        <ion-label>{{pendiente.titulo}}</ion-label>
+        <ion-note slot="end" color="tertiary">{{pendiente.items.length}} items</ion-note>
+    </ion-item>
+</ion-list>
