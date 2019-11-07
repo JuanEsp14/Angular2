@@ -14,10 +14,10 @@
             </li>
         </ul>
         <span class="navbar-text">
-            <button class="btn btn-outline-primary" *ngIf="!auth.loggedIn">
+            <button class="btn btn-outline-primary" *ngIf="!auth.loggedIn" (click)="auth.login()">
                 Ingresar
             </button>
-            <button class="btn btn-outline-danger" *ngIf="auth.loggedIn">
+            <button class="btn btn-outline-danger" *ngIf="auth.loggedIn" (click)="auth.logout()">
                 Salir
             </button>
       </span>
