@@ -1,0 +1,16 @@
+<div [ngSwitch]="alerta">
+    <div class="alert alert-success" role="alert" *ngSwitchCase="'success'">
+        A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-danger" role="alert" *ngSwitchCase="'danger'">
+        A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-warning" role="alert" *ngSwitchCase="'warning'">
+        A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-info" role="alert" *ngSwitchDefault>
+        A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+</div>
+
+<button type="button" (click)="alerta='success'" class="btn btn-default">Cambiar clase</button>
