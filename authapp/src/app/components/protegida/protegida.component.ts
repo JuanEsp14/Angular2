@@ -11,6 +11,9 @@ export class ProtegidaComponent implements OnInit {
   constructor(public auth:AuthService) { }
 
   ngOnInit() {
+    this.auth.userProfile$.subscribe(perfil =>{
+      console.log(perfil);
+    })
   }
 
 }
