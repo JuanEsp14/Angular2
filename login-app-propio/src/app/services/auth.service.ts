@@ -22,7 +22,16 @@ export class AuthService {
 
   logout(){}
 
-  login(usuario:UsuarioModel){}
+  login(usuario:UsuarioModel){
+    const authData = {
+      email:usuario.email,
+      password:usuario.password,
+      //Se podría enviar ...usuario y toma automáticamente los valores
+      returnSecureToken:true
+    }
+
+    return this.http.post(`${this.url}InWithPassword?key=${this.apikey}`, authData);
+  }
 
   nuevoUsuario(usuario:UsuarioModel){
     const authData = {
