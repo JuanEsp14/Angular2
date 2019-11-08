@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { UsuarioModel } from './models/usuario.model';
 
 @NgModule({
   declarations: [
