@@ -16,10 +16,6 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() { 
     this.usuario = new UsuarioModel();
-
-    this.usuario.email = 'juan.espinoza@fluxit.com.ar';
-    this.usuario.name = 'Juan Espinoza';
-    this.usuario.password = 'Una contraseña';
   }
 
   onsubmit(form:NgForm){
