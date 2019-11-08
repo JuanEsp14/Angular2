@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioModel } from '../../models/usuario.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -21,5 +22,8 @@ export class RegistroComponent implements OnInit {
     this.usuario.password = 'Una contraseña';
   }
 
+  onsubmit(form:NgForm){
+    if(form.invalid) return;
+  }
 
 }
