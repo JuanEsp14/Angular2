@@ -71,7 +71,7 @@ export class AuthService {
     localStorage.setItem('token', idToken);
 
     let hoy = new Date();
-    hoy.setSeconds(3600);
+    hoy.setSeconds(5);
     localStorage.setItem('expira', hoy.getTime().toString());
   }
 
