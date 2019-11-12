@@ -4,7 +4,7 @@
 
     <div>
 
-        <div class="form-group row">
+        <div class="form-group row" [ngClass]="{'has-danger': (nombre.errors?.required || nombre.errors?.minlength) && nombre.touched }">
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
@@ -14,8 +14,8 @@
                 <!--#nombre="ngModel" Hace referncia al form-control y nos permite trabajar con todas las referencias y propiedades del formulario
                     lo cual es muy útil para realizar validaciones del formulario o indicar errores en el mismo-->
                 <input class="form-control" type="text" placeholder="Nombre" name="nombre" minlength="5" [(ngModel)]="usuario.nombre" required #nombre="ngModel">
-                <div class="" *ngIf="nombre.errors?.required">Este campo es requerido</div>
-                <div class="" *ngIf="nombre.errors?.minlength">Por lo menos {{ nombre.errors.minlength.requiredLength }} caracteres</div>
+                <div class="form-control-feedback" *ngIf="nombre.errors?.required">Este campo es requerido</div>
+                <div class="form-control-feedback" *ngIf="nombre.errors?.minlength">Por lo menos {{ nombre.errors.minlength.requiredLength }} caracteres</div>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
     <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
         <div class="input-group col-md-8">
-            <button type="submit" class="btn btn-outline-primary">
+            <button type="submit" class="btn btn-outline-primary" disabled="!forma.valid">
         Guardar
       </button>
         </div>
