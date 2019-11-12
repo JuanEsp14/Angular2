@@ -11,7 +11,11 @@
                 <!--Si el ngModel lo ponemos solamente entre [ngModel] no se asignan automáticamente los valores 
                   Si el ngModel lo ponemos solamente entre [(ngModel)] se asignan automáticamente los valores -->
 
-                <input class="form-control" type="text" placeholder="Nombre" name="nombre" minlength="5" [(ngModel)]="usuario.nombre" required>
+                <!--#nombre="ngModel" Hace referncia al form-control y nos permite trabajar con todas las referencias y propiedades del formulario
+                    lo cual es muy útil para realizar validaciones del formulario o indicar errores en el mismo-->
+                <input class="form-control" type="text" placeholder="Nombre" name="nombre" minlength="5" [(ngModel)]="usuario.nombre" required #nombre="ngModel">
+                <div class="" *ngIf="nombre.errors?.required">Este campo es requerido</div>
+                <div class="" *ngIf="nombre.errors?.minlength">Por lo menos {{ nombre.errors.minlength.requiredLength }} caracteres</div>
             </div>
         </div>
 
