@@ -51,8 +51,16 @@
         </div>
     </div>
 
-
-
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Sexo</label>
+        <div class="col-md-8">
+            <label class="custom-control custom-radio" *ngFor="let s of sexos">
+                <input type="radio" name="sexo" class="custom-control-input" [(ngModel)]="usuario.sexo" [value]="s">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">{{s}}</span>
+            </label>
+        </div>
+    </div>
 
     <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
@@ -64,3 +72,7 @@
     </div>
 
 </form>
+
+<pre>
+  {{usuario | json}}
+</pre>
