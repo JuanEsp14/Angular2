@@ -4,29 +4,34 @@
 
     <div>
 
-        <div class="form-group row">
+        <div class="form-group row" [ngClass]="{'has-danger': forma.get('nombre').invalid}">
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
                 <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
+                <div class="form-control-feedback" *ngIf="forma.controls['nombre'].errors?.required">El nombre es necesario</div>
+                <div class="form-control-feedback" *ngIf="forma.controls['nombre'].errors?.minlength">Por lo menos 3 caracteres</div>
             </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row" [ngClass]="{'has-danger': forma.get('apellido').invalid}">
             <label class="col-2 col-form-label">Apellido</label>
             <div class="col-8">
 
                 <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido">
+                <div class="form-control-feedback" *ngIf="forma.controls['apellido'].errors?.required">El apellido es necesario</div>
             </div>
         </div>
 
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row" [ngClass]="{'has-danger': forma.get('correo').invalid}">
         <label class="col-2 col-form-label">Correo</label>
         <div class="col-md-8">
 
             <input class="form-control" type="email" placeholder="Correo electrónico" formControlName="correo">
+            <div class="form-control-feedback" *ngIf="forma.controls['correo'].errors?.required">El correo es necesario</div>
+            <div class="form-control-feedback" *ngIf="forma.controls['correo'].errors?.pattern">No es un correo válido</div>
         </div>
     </div>
 
