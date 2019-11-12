@@ -63,6 +63,19 @@
     </div>
 
     <div class="form-group row">
+        <label class="col-2 col-form-label">Acepta</label>
+        <div class="col-md-8">
+            <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="acepta" [(ngModel)]="usuario.acepta" required>
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Acepta terminos y condiciones</span>
+            </label>
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
         <div class="input-group col-md-8">
             <button type="submit" class="btn btn-outline-primary" disabled="!forma.valid">
