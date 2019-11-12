@@ -1,25 +1,26 @@
 <h4>Formularios <small>data</small></h4>
 <hr>
-<form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+<form [formGroup]="forma" (ngSubmit)="guardarCambios()" novalidate="novalidate">
 
-    <div>
+    <div formGroupName="nombrecompleto">
+        <!--formGroupName="nombrecompleto"-->
 
-        <div class="form-group row" [ngClass]="{'has-danger': forma.get('nombre').invalid}">
+        <div class="form-group row" [ngClass]="{'has-danger': forma.controls.nombrecompleto.controls.nombre.invalid}">
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
                 <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
-                <div class="form-control-feedback" *ngIf="forma.controls['nombre'].errors?.required">El nombre es necesario</div>
-                <div class="form-control-feedback" *ngIf="forma.controls['nombre'].errors?.minlength">Por lo menos 3 caracteres</div>
+                <div class="form-control-feedback" *ngIf="forma.controls.nombrecompleto.controls.nombre.errors?.required">El nombre es necesario</div>
+                <div class="form-control-feedback" *ngIf="forma.controls.nombrecompleto.controls.nombre.errors?.minlength">Por lo menos 3 caracteres</div>
             </div>
         </div>
 
-        <div class="form-group row" [ngClass]="{'has-danger': forma.get('apellido').invalid}">
+        <div class="form-group row" [ngClass]="{'has-danger':  forma.controls.nombrecompleto.controls.apellido.invalid}">
             <label class="col-2 col-form-label">Apellido</label>
             <div class="col-8">
 
                 <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido">
-                <div class="form-control-feedback" *ngIf="forma.controls['apellido'].errors?.required">El apellido es necesario</div>
+                <div class="form-control-feedback" *ngIf="forma.controls.nombrecompleto.controls.apellido.errors?.required">El apellido es necesario</div>
             </div>
         </div>
 
