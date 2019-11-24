@@ -36,6 +36,16 @@
         </div>
     </div>
 
+    <div class="form-group row" [ngClass]="{'has-danger':  forma.controls.nombrecompleto.controls.apellido.invalid}">
+        <label class="col-2 col-form-label">Pasatiempos</label>
+        <div class="col-8" formArrayName="pasatiempos">
+
+            <input *ngFor="let pasatiempo of forma.controls['pasatiempos'].controls; let i = index" class="form-control" type="text" placeholder="Pasatiempo" [formControlName]="i">
+        </div>
+
+        <button class="btn btn-primary" type="button" (click)="agregarPasatiempo()">Nuevo</button>
+    </div>
+
 
 
     <div class="form-group row">
