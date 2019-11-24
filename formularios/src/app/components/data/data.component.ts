@@ -12,7 +12,7 @@ export class DataComponent  {
   forma:FormGroup;
 
   usuario:Object = {
-    nombreCompleto:{
+    nombrecompleto:{
       nombre: "juan",
       apellido: "Espinoza"
     },
@@ -32,13 +32,24 @@ export class DataComponent  {
       'correo':  new FormControl('', [Validators.required, 
                                       Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")
                                     ])
-    }); 
+    });
+    //Se pueden setear los datos del usuario, ya que tiene la misma esttuctura
+    //y los campos se llaman de la misma manera que los de la validación
+    this.forma.setValue(this.usuario);
   }
 
   guardarCambios(){
     console.log(this.forma);
     console.log(this.forma.value);
+
+    //Se pueden reiniciar los datos unna vez que se guarda el dato
+    //de está manera permito que se cargue alguien nuevamente
+    this.forma.reset({
+      nombrecompleto:{
+        nombre: "",
+        apellido: ""
+      },
+      correo: ""
+    });
   }
-
-
 }
