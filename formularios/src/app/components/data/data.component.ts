@@ -38,11 +38,21 @@ export class DataComponent  {
                                     ]),
       'pasatiempos': new FormArray([
         new FormControl('Correr', Validators.required)
-      ])
+      ]),
+      'password1': new FormControl('', Validators.required),
+      'password2': new FormControl()
     });
     //Se pueden setear los datos del usuario, ya que tiene la misma esttuctura
     //y los campos se llaman de la misma manera que los de la validación
     //this.forma.setValue(this.usuario);
+
+    this.forma.controls['password2'].setValidators([
+      Validators.required,
+      //El bind see agrega para indicarle qué será this dentro de la función  igual
+      //esto se debe hacer ya que al agregar las validaciones de esta manera, se cambia el contexto
+      //al ejecutarse la función
+      this.noIgual.bind(this.forma)
+    ])
   }
 
   guardarCambios(){
@@ -70,6 +80,17 @@ export class DataComponent  {
     if(controls.value === "herrrera"){
       return{
         noherrera:true
+      }
+    }
+
+    return null;
+  }
+
+  noIgual(controls: FormControl):{[s:string]:boolean}{
+    let forma:any = this;
+    if(controls.value !== forma.controls['password1'].value){
+      return{
+        noiguales:true
       }
     }
 
