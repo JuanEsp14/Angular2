@@ -55,6 +55,17 @@ export class DataComponent  {
       //al ejecutarse la función
       this.noIgual.bind(this.forma)
     ])
+
+    //Se si cambia cualquier campo del formulario lanza la función
+    //this.forma.valueChanges
+    //    .subscribe( data => console.log(data))
+
+    //Para subscribirse al valor de un solo campo realizo
+    //this.forma.controls['username'].valueChanges
+    //    .subscribe(data => console.log(data))
+
+    this.forma.controls['username'].statusChanges
+        .subscribe(data => console.log(data))
   }
 
   guardarCambios(){
