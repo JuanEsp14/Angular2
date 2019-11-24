@@ -28,7 +28,10 @@ export class DataComponent  {
           Validators.required,
           Validators.minLength(3)
         ]),
-        'apellido': new FormControl('', Validators.required)
+        'apellido': new FormControl('', [
+                                          Validators.required,
+                                          this.noHerrera
+                                    ])
       }),
       'correo':  new FormControl('', [Validators.required, 
                                       Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")
@@ -61,5 +64,15 @@ export class DataComponent  {
     (<FormArray> this.forma.controls['pasatiempos']).push(
       new FormControl('Dormir', Validators.required)
     )
+  }
+
+  noHerrera(controls: FormControl):{[s:string]:boolean}{
+    if(controls.value === "herrrera"){
+      return{
+        noherrera:true
+      }
+    }
+
+    return null;
   }
 }
