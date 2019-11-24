@@ -46,6 +46,13 @@
         <button class="btn btn-primary" type="button" (click)="agregarPasatiempo()">Nuevo</button>
     </div>
 
+    <div class="form-group row" [ngClass]="{'has-danger': forma.controls.nombrecompleto.controls.nombre.invalid}">
+        <label class="col-2 col-form-label">Username</label>
+        <div class="col-8">
+            <input class="form-control" type="text" placeholder="Usuario" formControlName="username">
+        </div>
+    </div>
+
     <div class="form-group row" [ngClass]="{'has-danger':  forma.controls.nombrecompleto.controls.apellido.invalid}">
         <label class="col-2 col-form-label">Password</label>
         <div class="col-8">
@@ -72,5 +79,6 @@
 
 
     {{forma.valid}}
+    <br> {{forma.status}}
 
 </form>
