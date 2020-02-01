@@ -11,14 +11,19 @@ import Swal from 'sweetalert2';
 export class HeroesComponent implements OnInit {
 
   heroes: HeroeModel[] = [];
+  cargando = false;
 
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
-
+    this.cargando = true;
     this.heroesService.getHeroes()
-      .subscribe(resp => this.heroes = resp);
-  }
+      .subscribe(resp => {
+        this.cargando = false;
+        this.heroes = resp
+      });
+      
+    }
 
   borrarHeroe( heroe: HeroeModel, i: number){
     Swal.fire({
