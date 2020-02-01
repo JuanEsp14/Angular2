@@ -32,6 +32,10 @@ export class HeroesService {
     return this.http.put(`${this.url}/heroes/${heroe.id}.json`, heroeTemp);
   }
 
+  borrarHeroe(id: String){
+    return this.http.delete(`${this.url}/heroes/${id}.json`);
+  }
+
   getHeroe(id:String){
     return this.http.get(`${this.url}/heroes/${id}.json`);
   }
