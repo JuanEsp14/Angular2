@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from "@angular/forms";
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { ChatService } from './providers/chat.service';
 
-import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FormsModule } from "@angular/forms";
     AngularFireAuthModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
