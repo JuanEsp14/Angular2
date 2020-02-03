@@ -16,13 +16,19 @@ export class ChatService {
   }
 
   cargarMensajes(){
-    this.itemsCollection = this.afs.collection<Mensaje>('chats');
+    this.itemsCollection = this.afs.collection<Mensaje>('chats',
+         ref => ref.orderBy('fecha', 'desc')
+                   .limit(3));
 
     //Con la nueva actualzación de Angular se debe usar el pipe antes de 
     //hacer un map en un observable
     return this.itemsCollection.valueChanges().pipe(
           map((mensajes: Mensaje[]) => {
-            this.chats = mensajes;
+            this.chats = [];
+            for(let mensaje of mensajes){
+              this.chats.unshift(mensaje);
+            }
+            return this.chats;
          }));
             ;
   }
