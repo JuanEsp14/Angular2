@@ -19,4 +19,10 @@ export class PeliculasService {
                     .pipe(map( (res:any)=>res.results));
   }
 
+  buscarPelicula(texto:string){
+    let url = `${ this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
+
+    return this.http.get(url).pipe(map((res:any)=>res.results));
+  }
+
 }
