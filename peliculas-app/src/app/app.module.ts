@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
+import { APP_ROUTING } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BuscarComponent } from './components/buscar/buscar.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
