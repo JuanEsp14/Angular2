@@ -10,10 +10,6 @@ export class AppComponent {
   title = 'peliculas-app';
 
   constructor ( public _ps: PeliculasService){
-    
-    this._ps.getPopulares()
-        .subscribe( data => console.log(data)
-        );
         
   }
 }
