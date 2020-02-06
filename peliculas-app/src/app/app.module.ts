@@ -8,10 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
-import { GaleriaComponent } from './components/galeria/galeria.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { APP_ROUTING } from './app.routes';
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { GaleriaComponent } from './components/home/galeria.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,9 @@ import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
     NavbarComponent,
     HomeComponent,
     PeliculaComponent,
-    GaleriaComponent,
     BuscarComponent,
-    PeliculaImagenPipe
+    PeliculaImagenPipe,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,

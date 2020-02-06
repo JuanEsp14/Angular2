@@ -7,26 +7,9 @@
 
 <div class="container">
     <br>
-    <h2>Cartelera Populares</h2>
-    <hr>
-    <div class="row" *ngIf="cartelera">
-        <div class="col-sm-6">
-            <div class="row">
-                <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url('+( cartelera[0] | peliculaImagen ) +')'}"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 div-pic-2" [ngStyle]="{'background-image': 'url('+( cartelera[1] | peliculaImagen ) +')'}"></div>
-                <div class="col-md-6 div-pic-2" [ngStyle]="{'background-image': 'url('+( cartelera[2] | peliculaImagen ) +')'}"></div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <div class="col-md-6 div-pic-2" [ngStyle]="{'background-image': 'url('+( cartelera[3] | peliculaImagen ) +')'}"></div>
-                <div class="col-md-6 div-pic-2" [ngStyle]="{'background-image': 'url('+( cartelera[4] | peliculaImagen ) +')'}"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url('+( cartelera[5] | peliculaImagen ) +')'}"></div>
-            </div>
-        </div>
-    </div>
+    <!-- Las peliculas se mandan entre [] porque son una variable que está en el controlador
+        en cambio el título como lo estoy escribiendo se lo mando sin llaves cuadradas -->
+    <app-galeria [peliculas]="cartelera | slice:0:6" titulo="Peliculas en Cartelera"></app-galeria>
+    <app-galeria [peliculas]="populares | slice:0:6" titulo="Peliculas Populares"></app-galeria>
+    <app-galeria [peliculas]="popularesNinos | slice:0:6" titulo="Peliculas Populares Niños"></app-galeria>
 </div>
