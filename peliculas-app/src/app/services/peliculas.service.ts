@@ -9,6 +9,7 @@ export class PeliculasService {
 
   private apikey:string = "5bf50a4f4c6d701368f143eed42a6104";
   private urlMoviedb:string = "https://api.themoviedb.org/3";
+  peliculas:any[] = [];
 
   constructor(private http : HttpClient) { }
 
@@ -46,7 +47,7 @@ export class PeliculasService {
   }
 
   getPopularesNinos(){
-    let url = `${ this.urlMoviedb}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
+    let url = `${ this.urlMoviedb}/discover/movie?certification_country=US&certification.lte=R&sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
 
     return this.http.get( url )
                     .pipe(map( (res:any)=>res.results));
@@ -55,7 +56,11 @@ export class PeliculasService {
   buscarPelicula(texto:string){
     let url = `${ this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
 
-    return this.http.get(url).pipe(map((res:any)=>res.results));
+    return this.http.get(url).pipe(map((res:any)=>{
+      this.peliculas = res.results;
+      console.log(res.results);
+      return res.results;
+    }));
   }
 
 }
