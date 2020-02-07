@@ -11,6 +11,8 @@
             <p>{{ pelicula.tagline }}</p>
             <p>Popularidad: <span class="badge badge-primary">{{ pelicula.popularity/10 | number:'.2-2' }}</span></p>
             <p>Voto promedio: <span class="badge badge-success">{{ pelicula.vote_average | number:'.2-2' }}</span></p>
+
+            <button type="button" class="btn btn-outline-danger" [routerLink]="['/'+pag, '']">Regresar</button>
         </div>
     </div>
 </div>
