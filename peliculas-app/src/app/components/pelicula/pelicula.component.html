@@ -1,1 +1,16 @@
-<p>pelicula works!</p>
+<div *ngIf="pelicula" class="container main-container animated fadeIn fast">
+    <h1>{{ pelicula.title }}</h1>
+    <div class="row">
+        <div class="col-md-5">
+            <img [src]="pelicula | peliculaImagen:true" alt="pelicula.original_title" class="img-thumbail | img-fluid">
+        </div>
+        <div class="col-md-7">
+            <h3>Sinopsis</h3>
+            <p>{{ pelicula.overview }}</p>
+            <h4>Frase celebre</h4>
+            <p>{{ pelicula.tagline }}</p>
+            <p>Popularidad: <span class="badge badge-primary">{{ pelicula.popularity/10 | number:'.2-2' }}</span></p>
+            <p>Voto promedio: <span class="badge badge-success">{{ pelicula.vote_average | number:'.2-2' }}</span></p>
+        </div>
+    </div>
+</div>
