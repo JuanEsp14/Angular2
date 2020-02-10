@@ -14,3 +14,7 @@ body {
     margin-top: 5px;
     padding: 10px;
 }
+
+agm-map {
+    height: 470px;
+}
