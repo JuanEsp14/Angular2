@@ -31,4 +31,9 @@ export class MapaComponent implements OnInit {
     localStorage.setItem('marcadores', JSON.stringify(this.marcadores));
   }
 
+  borrarMarcador(i:number){
+    this.marcadores.splice(i, 1);
+    this.guardarStorage();
+  }
+
 }
