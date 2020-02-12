@@ -7,6 +7,7 @@ import { MaterialModule } from './material.module';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core'
 import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 //El entryComponents se debe agregar cuando las pantallas tienen comportamiento dinámico
@@ -25,6 +26,7 @@ import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCogXeH-yxi44MP_abLxDrGLBHJ-Syvnw4'
     })
