@@ -6,14 +6,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core'
-import { asapScheduler } from 'rxjs';
+import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
 
 
+//El entryComponents se debe agregar cuando las pantallas tienen comportamiento dinámico
+//como los popups del mapa component 
 
 @NgModule({
+  entryComponents:[
+    MapaEditarComponent
+  ],
   declarations: [
     AppComponent,
-    MapaComponent
+    MapaComponent,
+    MapaEditarComponent
   ],
   imports: [
     BrowserModule,
