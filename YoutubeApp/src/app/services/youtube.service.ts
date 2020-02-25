@@ -18,21 +18,43 @@ export class YoutubeService {
     //Dos maneras de pasarle parámetros a la URL
     let url = `${ this.youtubeUrl }/playlistItems?part=snippet&maxResults=16&playlistId=UU1TaReAPiLPy1dyHopzlaqA&key=${ this.apiKey}`;
     let url2 = `${ this.youtubeUrl }/playlistItems`;
-    let paramsString = new HttpParams({
-      fromString: `part=snippet&
-                    maxResults=10&
-                    playlistId=${this.playlistId}&
-                    key=${this.apiKey}`
-    });
-
-    let paramsObject = new HttpParams({
-      fromObject:{
-        part: 'snippet',
-        maxResults: '10',
-        playlistId: this.playlistId,
-        key: this.apiKey,
-      }
-    });
+    let paramsString;
+    let paramsObject;
+    if (this.nextPageToken){
+      paramsString = new HttpParams({
+        fromString: `part=snippet&
+                      maxResults=10&
+                      playlistId=${this.playlistId}&
+                      key=${this.apiKey}&
+                      pageToken=${this.nextPageToken}`
+      });
+  
+      paramsObject = new HttpParams({
+        fromObject:{
+          part: 'snippet',
+          maxResults: '10',
+          playlistId: this.playlistId,
+          key: this.apiKey,
+          pageToken: this.nextPageToken
+        }
+      });
+    }else{
+      paramsString = new HttpParams({
+        fromString: `part=snippet&
+                      maxResults=10&
+                      playlistId=${this.playlistId}&
+                      key=${this.apiKey}`
+      });
+  
+      paramsObject = new HttpParams({
+        fromObject:{
+          part: 'snippet',
+          maxResults: '10',
+          playlistId: this.playlistId,
+          key: this.apiKey,
+        }
+      });
+    }
 
     return this.http.get( url2, {params:paramsObject})
             .pipe(map((res:any) => {

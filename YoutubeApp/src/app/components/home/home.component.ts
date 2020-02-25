@@ -28,4 +28,16 @@ export class HomeComponent implements OnInit {
     $('#modal').modal();
   }
 
+  cerrarModal( video:any){
+    this.videoSeleccionado = null;
+    $('#modal').modal('hide');
+  }
+
+  cargarMas(){
+    this._yts.getVideos().subscribe( videos =>{
+      console.log(videos);
+      this.videos = this.videos.concat(videos);
+    });
+  }
+
 }
