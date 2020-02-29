@@ -4,12 +4,14 @@
 //HostListner sirve para tener CallBaks cuando suceden eventos
 //Input - Output sirven para introducir y enviar datos al padre
 import { Directive, EventEmitter,  ElementRef, HostListener, Input, Output } from '@angular/core';
+import { FileItem } from '../models/file-item';
 
 @Directive({
   selector: '[appNgDropFiles]'
 })
 export class NgDropFilesDirective {
 
+  @Input() archivos: FileItem[] = [];
   @Output() mouseSobre: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
@@ -24,5 +26,35 @@ export class NgDropFilesDirective {
   @HostListener('dragleave',['$event'])
   public onDragLeave( event:any ){
     this.mouseSobre.emit( false );
+  }
+
+  //Validaciones
+  private _archivoPuedeSerCargado( archivo:File ): boolean{
+    if( !this._archivoYaFueDroppeado( archivo.name) && this._esImagen( archivo.type )){
+      return true;
+    }
+    return false;
+  }
+
+  private _prevenirDetener( event ){
+    //Evitan que al arrojar la imagen en Chrome esta se abra por defecto
+    event.preventDefault(); 
+    event.stopPropagation(); 
+  }
+
+  private _archivoYaFueDroppeado( nombreArchivo:string ):boolean{
+    //Verifica si el archivo ya está en el arreglo de imagenes
+    for(const archivo of this.archivos){
+      if( archivo.nombreArchivo == nombreArchivo){
+        console.log('El archivo'+ nombreArchivo+ 'ya está agregado');
+        return true;
+      }
+    }
+    return false;
+  } 
+
+  private _esImagen( tipoArchivo: string):boolean{
+    //Validación del tipo de archivo
+    return (tipoArchivo === '' || tipoArchivo === undefined ) ? false : tipoArchivo.startsWith('image');
   }
 }
