@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
+import { LineaComponent } from './components/linea/linea.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LineaComponent
   ],
   imports: [
     BrowserModule,
