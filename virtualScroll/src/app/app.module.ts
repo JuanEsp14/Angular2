@@ -2,15 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { VirtualComponent } from './components/virtual/virtual.component';
+import { ScrollingModule, ScrollDispatcher  } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VirtualComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ScrollingModule
   ],
-  providers: [],
+  providers: [ScrollDispatcher],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
