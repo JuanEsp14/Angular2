@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 import { LineaComponent } from './components/linea/linea.component';
 import { BarrasComponent } from './componentes/barras/barras.component';
+import { CircularComponent } from './componentes/circular/circular.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LineaComponent,
-    BarrasComponent
+    BarrasComponent,
+    CircularComponent
   ],
   imports: [
     BrowserModule,
