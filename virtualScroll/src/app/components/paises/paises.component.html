@@ -1,0 +1,10 @@
+<h1>Paises</h1>
+<hr>
+
+<!-- cdkDropList se permite que los elementos hijos de la lista se muevan a través de ella
+    El evento cdkDropListDropped se ejecuta cada vez que se produce un cambio en la lista-->
+<ul class="list-group" cdkDropList (cdkDropListDropped)="drop($event)">
+    <li class="list-group-item" *ngFor="let pais of paises" cdkDrag>
+        {{ pais.name }}
+    </li>
+</ul>
